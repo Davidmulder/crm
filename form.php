@@ -7,7 +7,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>	
 
 
-<?php include 'crm.html'; ?>
+
+<script> 
+    $(function(){
+      $("#includedcm").load("crm.html"); 
+    });
+    </script> 
+     <div id="includedcm"></div>
+
+<link rel="stylesheet" href="https://www.grupoliberal.com/crm/style.css">
 </head>
 
 <body>
@@ -15,37 +23,31 @@
 
 <form method="post"  id="form">
 
-  <p>
-    <label for="textfield">Nome:</label>
-    <input type="text" name="name" id="textfield">
-  </p>
-  <p>
-    <label for="email">Email:</label>
-    <input type="email" name="email" id="email">
-  </p>
-  <p>Curso 
-    <label for="curso">Select:</label>
-    <select name="curso" id="curso">
-      <option selected>Todos os cursos</option>		
-      <option>enfermagem</option>
+  <div class="form-group">
+    <input type="text" name="name" id="nome" class="form-control rounded-left" placeholder="Nome" required>
+  </div>
+  <div class="form-group">
+    <input type="email" name="email" id="email" class="form-control rounded-left" placeholder="E-Mail" required>
+  </div>
+  <div class="form-group">
+   <select name="curso" id="curso" class="form-control rounded-left">
+      <option selected>Escolha o Curso</option>		
+      <option>Enfermagem</option>
       <option>Medicia</option>
       <option>Odotologia</option>
     </select>
-  </p>
-  <p>
-    <label for="phone">Telefone:</label>
-    <input type="text" name="phone" id="textfield3">
-  </p>
-  <p>
-    <label for="mensag">Mensagens:</label>
-    <textarea name="messagem" id="textarea"></textarea>
-  </p>
-  <p>
-    <input type="submit" name="button" id="enviar" value="Enviar">
-    <input name="cap" type="hidden" id="cap" value="FORM_FIBRA">
-  </p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
+  </div>
+  <div class="form-group">
+    <input type="text" name="phone" id="textfield3" placeholder="Telefone" maxlength="15" class="form-control rounded-left" required>
+  </div>
+  <div class="form-group">
+    <textarea name="messagem" id="textarea" class="form-control rounded-left" placeholder="Mensagem" ></textarea>
+  </div>
+  <div class="form-group">
+    <input type="submit" name="button" id="enviar" value="Enviar" class="btn btn-primary rounded submit p-3 px-5">
+    <input name="cap" type="hidden" id="cap" value="FORM_FIBRA_ODONTO">
+  </div>
+  
 </form>
 
 
